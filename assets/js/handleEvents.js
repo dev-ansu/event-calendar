@@ -9,7 +9,7 @@ const getEvents = (filter = null)=>{
 
     if(filter != null){
         return events.filter(el =>{
-            if(el.evento.normalize("NFD").includes(filter.normalize("NFD")) || el.inicio == filter || el.termino == filter){
+            if(el.evento.toLowerCase().normalize("NFD").includes(filter.toLowerCase().normalize("NFD")) || el.inicio == filter || el.termino == filter){
                 return el;
             }
         })
